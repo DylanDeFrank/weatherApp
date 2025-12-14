@@ -1,0 +1,7 @@
+div.container{
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 98vw;
+    margin: 1vw auto;
+    height: 50vw;
+}
