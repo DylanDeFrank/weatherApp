@@ -15,23 +15,28 @@ form.addEventListener("submit", async function(event) {
     console.log(encodeURIComponent(x))
     const getData = await getTemp(x)
     console.log(getData)
-    parseData(getData.days)
-    createGrid()
+    const week = parseData(getData.days)
+    createGrid(week)
 })
 
 function parseData(array){
+    const week = []
     for (let index = 0; index < 7; index++) {
         const element = array[index];
-        console.log(element)
+        week.push(element)
     }
+    return week
 }
 
-function createGrid(){
-    const  container = document.createElement("div")
-    container.classList.add("container")
-    const addTo = document.querySelector("body")
-    addTo.appendChild(container)
-
+function createGrid(array){
+    const container = document.createElement("div");
+    container.classList.add("container");
+    const addTo = document.querySelector("body");
+    addTo.appendChild(container);
+    array.forEach((div) => {
+        const day = document.createElement("div");
+        container.appendChild(day);
+    });
 }
 function sayHi(nme, hello){
     greeting(nme)

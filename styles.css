@@ -4,4 +4,10 @@ div.container{
     width: 98vw;
     margin: 1vw auto;
     height: 50vw;
+    display: flex;
+}
+.container > div {
+    flex: 1;
+    border: 1px solid black
+
 }
